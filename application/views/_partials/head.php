@@ -11,15 +11,7 @@
     <link href="<?php echo base_url() ?>assets/lte/dist/css/skins/_all-skins.min.css" rel="stylesheet"/>
     <link href="<?php echo base_url() ?>assets/lte/plugins/animate/animate.css" rel="stylesheet"/>
     <link href="<?php echo base_url() ?>assets/lte/plugins/pace/pace.css" rel="stylesheet"/>
+    <link href="<?php echo base_url() ?>assets/lte/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+    <link href="<?php echo base_url() ?>assets/custom.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <style type="text/css">
-        .selected {
-            background-color: #008B8B !important;
-            color: #ffffff !important;
-        }
-        .select2-container {
-            width: 100% !important;
-            padding: 0;
-        }
-    </style>
 </head>

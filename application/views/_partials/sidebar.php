@@ -9,7 +9,7 @@
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>
-    <ul class="sidebar-menu">
+    <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MENU</li>
       <li class="treeview berita">
         <a href="<?php echo base_url(); ?>berita">
@@ -21,7 +21,7 @@
           <i class="fa fa-newspaper-o"></i> <span>Barang</span>
         </a>
       </li>
-       <li class="treeview agen">
+      <li class="treeview agen">
         <a href="<?php echo base_url(); ?>agen">
           <i class="fa fa-newspaper-o"></i> <span>Agen</span>
         </a>

@@ -34,13 +34,13 @@
                         <div class="form-group">
                           <label>Select</label>
                           <select class="form-control select2" id="selectsatu" name="select">
-                            <option>- Pilih Data -</option>
+                            <option value="">- Pilih Data -</option>
                           </select>
                         </div>
                         <div class="form-group">
                           <label>Select Dua</label>
                           <select class="form-control select2" id="selectdua" name="selectz">
-                            <option>- Pilih Data -</option>
+                            <option value="">- Pilih Data -</option>
                           </select>
                         </div>
                         <div class="form-group">
@@ -95,7 +95,7 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label>Filter 1</label>
-                          <input type="text" class="form-control" name="xx">
+                          <input type="text" class="form-control datepicker" name="xx">
                         </div>
                       </div>
                       <div class="col-md-3">
@@ -119,7 +119,7 @@
                     </div>
                     <div class="pull-right">
                       <button class="btn btn-warning btn-flat edit-btn" onclick="edit_data()"><i class="fa fa-pencil"></i> Ubah</button>
-                      <button class="btn btn-danger btn-flat add-btn" onclick="hapus_data()" ><i class="fa fa-trash"></i> Hapus</button>
+                      <button class="btn btn-danger btn-flat delete-btn" onclick="hapus_data()" ><i class="fa fa-trash"></i> Hapus</button>
                     </div>
                   </div>
                   <div class="box-body">
@@ -160,6 +160,7 @@
 
   $(document).ready(function() {
       activemenu();
+      dpicker();
       getSelect('selectsatu','getselects');
       getSelect('selectdua','getselects');
 
@@ -242,11 +243,10 @@
       } else {
           url = `${apiurl}/updatedata`;
       }
-      var formData = new FormData($('#form-data')[0]);
       $.ajax({
           url: url,
           type: "POST",
-          data: $('#form-data').serialize(),
+          data: $('#form-data').serializeArray(),
           dataType: "JSON",
           success: function(data) {
               if (data.sukses == 'success') {

@@ -17,8 +17,9 @@
 	var php_session_id = '<?php echo $this->session->userdata("id") ?>';
 
 	$(document).ready(function() {
-	    
+	    allowAkses();
 	    select2();
+	    // getMenu()
 	})
 
 	$(function() {
@@ -27,9 +28,17 @@
 	    }
 	})
 
+	function dpicker() {
+	    $('.datepicker').datepicker({
+	        autoclose: true,
+	        format: 'dd M yyyy'
+	    })
+	}
+
 	function select2() {
 	    $('.select2').select2({
-	        placeholder: 'Select an option'
+	        placeholder: 'Select an option',
+	        allowClear: true
 	    });
 	}
 
@@ -89,8 +98,47 @@
 	    });
 	}
 
+	function getMenu() {
+		var mInduk = [
+			{'path':'a','nama':'artikel 1', 'icon':'fa fa-star'},
+			{'path':'b','nama':'artikel 5', 'icon':'fa fa-star'},
+		];
+
+		var mChild = [
+			{'path':'a','nama':'artikel 1', 'icon':'fa fa-star'},
+			{'path':'a','nama':'artikel 2', 'icon':'fa fa-star'},
+			{'path':'a','nama':'artikel 3', 'icon':'fa fa-star'},
+			{'path':'a','nama':'artikel 4', 'icon':'fa fa-star'},
+			{'path':'b','nama':'artikel 5', 'icon':'fa fa-star'},
+			{'path':'b','nama':'artikel 6', 'icon':'fa fa-star'},
+			{'path':'b','nama':'artikel 7', 'icon':'fa fa-star'},
+		]
+	 
+	    $.each(mInduk, function(i, v) {
+	        if (mInduk[i].path == mInduk[i].path) {
+	            $(".sidebar-menu").append(`
+			<li class="treeview">
+	          <a href="#">
+	            <i class="fa fa-dashboard"></i> <span>${mInduk[i].path}</span>
+	            <span class="pull-right-container">
+	              <i class="fa fa-angle-left pull-right"></i>
+	            </span>
+	          </a>
+	          <ul class="treeview-menu tree-child-${mInduk[i].path}">
+	          </ul>
+	        </li>`);
+	        }
+	    });
+
+	    $.each(mChild, function(i, v) {
+	        if (mChild[i].path == mChild[i].path) {
+	            $(`.tree-child-${mChild[i].path}`).append(`<li><a href="${php_base_url}${mChild[i].path}"><i class="fa fa-circle-o"></i> ${mChild[i].nama}</a></li>`);
+	        }
+	    });
+	}
+
 	function allowAkses() {
-		
+		// $('.add-btn').remove();
 	}
 
 </script>
