@@ -21,6 +21,11 @@
           <i class="fa fa-newspaper-o"></i> <span>Barang</span>
         </a>
       </li>
+       <li class="treeview agen">
+        <a href="<?php echo base_url(); ?>agen">
+          <i class="fa fa-newspaper-o"></i> <span>Agen</span>
+        </a>
+      </li>
     </ul>
   </section>
 </aside>
