@@ -7,7 +7,7 @@ class Barang extends CI_Controller {
     public $indexpage   = 'barang/v_barang';
     function __construct() {
         parent::__construct();
-        include(APPPATH.'libraries/sessionakses.php');
+        // include(APPPATH.'libraries/sessionakses.php');
     }
     function index(){
         $this->load->view($this->indexpage);  
