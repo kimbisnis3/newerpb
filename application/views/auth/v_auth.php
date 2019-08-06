@@ -6,10 +6,28 @@
 		body {
 			background:#9adea9 !important;
 		}
+		.hue {
+		    background: #f35626;
+		    background-image: linear-gradient(92deg, #f35626 0%,#feab3a 100%);
+		    -webkit-background-clip: text;
+		            background-clip: text;
+		    -webkit-text-fill-color: transparent;
+		    animation: hue 20s infinite linear;
+		  }
+
+		  @keyframes hue {
+			  from {
+			    filter: hue-rotate(0deg);
+			  }
+			  
+			  to {
+			    filter: hue-rotate(-360deg);
+			  }
+			}
 	</style>
 	<body class="hold-transition">
 		<div class="login-box">
-			<div class="login-logo">
+			<div class="login-logo hue">
 				<b>My Panel</b> <br>
 			</div>
 			<div class="login-box-body" id="login">
@@ -49,12 +67,12 @@
               pass		: $('[name="pass"]').val(),
           },
           success: function(data) {
-              if (data.sukses == 'success') {
-                  showNotif('Sukses', 'Login Sukses', 'success')
+              if (data.result == 'success') {
+                  showNotif(data.caption, data.msg, data.class)
                   setTimeout(function(){ window.location.href = "<?php echo base_url() ?>landingpage" }, 1000);
                   ;
-              } else if (data.sukses == 'fail') {
-                  showNotif('Gagal', 'Username dan Password tidak sesuai', 'danger')
+              } else if (data.result == 'fail') {
+                  showNotif(data.caption, data.msg, data.class)
               }
           },
           error: function(jqXHR, textStatus, errorThrown) {
@@ -71,6 +89,7 @@
 	        return false;
 	    }
 	});
+	
 	$('[name="pass"]').keypress(function(e) {
 	    var key = e.which;
 	    if (key == 13) 
@@ -79,6 +98,7 @@
 	        return false;
 	    }
 	});
+
 </script>
 <script>
 VANTA.BIRDS({

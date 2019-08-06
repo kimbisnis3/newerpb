@@ -26,6 +26,15 @@ class Universe extends CI_Controller {
         $r['result'] = $this->db->get_where('m_akses',$w)->row();
         echo json_encode($result);
 
+    }
+
+    function getMenu() {
+        ($this->session->userdata("super") == "yes") ? $w['iduser']= $this->session->userdata("id") : $w['iduser'] != 0;
+        $w['aktif'] = 1;
+
+        $r['induk'] = $this->db->get_where('m_menu',$w)->row();
+        $r['anak']  = $this->db->get_where('m_menu',$w)->row();
+        echo json_encode($r);
 
     }
 
