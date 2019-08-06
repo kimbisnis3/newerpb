@@ -1,49 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html> 
 	<title>My Panel</title>
-	<?php
-	$this->load->view('_partials/head');
-	?>
+	<?php $this->load->view('_partials/head') ?>
 	<style type="text/css">
 		body {
 			background:#9adea9 !important;
 		}
 	</style>
-	<head>
-		<style>
-		</style>
-	</head>
-</head>
-<body class="hold-transition">
-	<div class="login-box">
-		<div class="login-logo">
-			<b>My Panel</b> <br>
-		</div>
-		<div class="login-box-body">
-			<p class="login-box-msg">Login</p><br>
-			<form method="post">
-				<div class="form-group has-feedback">
-					<input type="text" name="username" class="form-control" placeholder="Username">
-					<span class="glyphicon glyphicon-user form-control-feedback"></span>
-				</div>
-				<div class="form-group has-feedback">
-					<input type="password" name="pass" class="form-control" placeholder="Password">
-					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
-				</div>
-				<div class="row">
-					<div class="col-xs-12">
-						<button type="button" class="btn btn-success btn-block btn-flat btn-lg" onclick="login()">Masuk</button>
+	<body class="hold-transition">
+		<div class="login-box">
+			<div class="login-logo">
+				<b>My Panel</b> <br>
+			</div>
+			<div class="login-box-body" id="login">
+				<p class="login-box-msg">Login</p><br>
+				<form>
+					<div class="form-group has-feedback">
+						<input type="text" name="username" class="form-control" placeholder="Username">
+						<span class="fa fa-user form-control-feedback"></span>
 					</div>
-					<div>
+					<div class="form-group has-feedback">
+						<input type="password" name="pass" class="form-control" placeholder="Password">
+						<span class="fa fa-lock form-control-feedback"></span>
 					</div>
-				</div>
-			</form>
-			<hr>
-			<a href="#"></a><br>
+					<div class="row">
+						<div class="col-xs-12">
+							<button type="button" class="btn btn-success btn-block btn-flat btn-lg" onclick="login()">Masuk</button>
+						</div>
+					</div>
+				</form>
+				<br>
+				<a href="#"></a><br>
+			</div>
 		</div>
-	</div>
-</body>
+	</body>
 <?php $this->load->view('_partials/js');?>
+</html>
+<script src="<?php echo base_url()?>assets/vanta/three.r92.min.js"></script>
+<script src="<?php echo base_url()?>assets/vanta/vanta.birds.min.js"></script>
 <script type="text/javascript">
 	function login() {
 		$.ajax({
@@ -57,13 +51,14 @@
           success: function(data) {
               if (data.sukses == 'success') {
                   showNotif('Sukses', 'Login Sukses', 'success')
-                  window.location.href = "<?php echo base_url() ?>landingpage";
+                  setTimeout(function(){ window.location.href = "<?php echo base_url() ?>landingpage" }, 1000);
+                  ;
               } else if (data.sukses == 'fail') {
-                  showNotif('Gagal', 'USername dan Password tidak sesuai', 'danger')
+                  showNotif('Gagal', 'Username dan Password tidak sesuai', 'danger')
               }
           },
           error: function(jqXHR, textStatus, errorThrown) {
-              showNotif('Gagal', 'Error', 'danger')
+              showNotif('Gagal', 'Internal Error', 'danger')
           }
       });
 	}
@@ -85,4 +80,11 @@
 	    }
 	});
 </script>
-</html>
+<script>
+VANTA.BIRDS({
+  el: "#login",
+  backgroundColor: 0xffffff,
+  birdSize: 1.90,
+  quantity: 5.00
+})
+</script>

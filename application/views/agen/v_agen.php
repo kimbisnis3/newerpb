@@ -15,7 +15,6 @@
         </section>
         <div class="modal fade" id="modal-data" role="dialog" data-backdrop="static">
           <div class="modal-dialog">
-            <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -194,6 +193,29 @@
     });
   });
 
+  function tabel_detail() {
+      if (idx == -1) { return false }
+      $('#modal-detail').modal('show');
+      id = table.cell( idx, 1).data();
+      tablehr = $('#tabledetail').DataTable({
+          "destroy": true,
+          "processing": true,
+          "ajax": {
+              "url": `${apiurl}/getdetail`,
+              "data": {
+                  id: id
+              },
+              "type": "POST",
+          },
+          "columns": [
+            { "data": "no" },
+            { "data": "pertanyaan" },
+            { "data": "jawaban" },
+            { "data": "action" }
+          ]
+      });
+  }
+
   function refresh() {
       table.ajax.reload(null, false);
       idx = -1;
@@ -202,6 +224,7 @@
   function add_data() {
       state = 'add';
       $('#form-data')[0].reset();
+      $('.select2').trigger('change');
       $('#modal-data').modal('show');
       $('.modal-title').text('Tambah Data');
   }

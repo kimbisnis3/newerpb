@@ -4,7 +4,6 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="<?php echo base_url() ?>assets/lte/plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="<?php echo base_url()?>assets/lte/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="<?php echo base_url()?>assets/lte/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url()?>assets/lte/plugins/datatables.net-bs/css/dataTables.bootstrap.css" rel="stylesheet" />
     <link href="<?php echo base_url()?>assets/lte/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
     <link href="<?php echo base_url() ?>assets/lte/dist/css/AdminLTE.min.css" rel="stylesheet"/>

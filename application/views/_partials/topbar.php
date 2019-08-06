@@ -18,7 +18,7 @@
             <span class="hidden-xs"><?php echo $this->session->userdata("username"); ?></span>
             <span class="hidden-xs"></span>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu animated fadeIn">
             <li class="user-header">
               <img src="assets/gambar/logo.png" class="img-circle" alt="User Image">
               <p>

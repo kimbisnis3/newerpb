@@ -16,15 +16,27 @@
           <i class="fa fa-newspaper-o"></i> <span>Berita</span>
         </a>
       </li>
-      <li class="treeview berita">
+      <li class="berita">
         <a href="<?php echo base_url(); ?>barang">
           <i class="fa fa-newspaper-o"></i> <span>Barang</span>
         </a>
       </li>
-      <li class="treeview agen">
+      <li class="agen">
         <a href="<?php echo base_url(); ?>agen">
-          <i class="fa fa-newspaper-o"></i> <span>Agen</span>
+          <i class="fa fa-th"></i> <span>Agen</span>
         </a>
+      </li>
+      <li class="treeview invisible">
+        <a href="#">
+          <i class="fa fa-dashboard"></i> <span>Menu Tree</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+          <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+        </ul>
       </li>
     </ul>
   </section>
