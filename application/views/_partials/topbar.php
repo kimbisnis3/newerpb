@@ -15,19 +15,15 @@
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src="assets/gambar/logo.png" class="user-image" alt="User Image">
-            <span class="hidden-xs"><?php echo $this->session->userdata("username"); ?></span>
+            <span class="hidden-xs"><?php echo $this->session->userdata("username") ?></span>
             <span class="hidden-xs"></span>
           </a>
           <ul class="dropdown-menu animated fadeIn">
             <li class="user-header">
               <img src="assets/gambar/logo.png" class="img-circle" alt="User Image">
               <p>
-                <?php echo $this->session->userdata("nama"); ?>
+                <?php echo $this->session->userdata("nama") ?>
                 <span class="hidden-xs"> </span>
-                <?php
-                $nama_user = $this->session->userdata("nama");
-                ?>
-                
               </p>
             </li>
             <li class="user-footer">

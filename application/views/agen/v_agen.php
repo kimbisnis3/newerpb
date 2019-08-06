@@ -209,8 +209,8 @@
           },
           "columns": [
             { "data": "no" },
-            { "data": "pertanyaan" },
-            { "data": "jawaban" },
+            { "data": "zzz" },
+            { "data": "zzz" },
             { "data": "action" }
           ]
       });

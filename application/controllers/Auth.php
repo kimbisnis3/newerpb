@@ -50,7 +50,7 @@ class Auth extends CI_Controller{
                 echo json_encode($r);
 
             }else{
-                $r['result'] = 'fail';
+                $r['result']    = 'fail';
                 $r['caption']   = 'Gagal';
                 $r['msg']       = 'Username dan Password tidak sesuai';
                 $r['class']     = 'danger';
